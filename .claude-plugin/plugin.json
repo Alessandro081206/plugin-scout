@@ -1,8 +1,10 @@
 {
-  "name": "plugin",
-  "description": "Mein erstes Claude-Code-Plugin",
-  "version": "0.1.0",
+  "name": "plugin-scout",
+  "description": "Findet gute Claude-Code-Plugins für deinen Use Case, erklärt sie einfach und schickt dir ein Weekly-Update mit neuen Plugins.",
+  "version": "0.2.0",
   "author": {
     "name": "Alessandro081206"
-  }
+  },
+  "repository": "https://github.com/Alessandro081206/plugin-scout",
+  "keywords": ["plugins", "discovery", "onboarding", "weekly"]
 }
