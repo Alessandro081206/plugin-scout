@@ -1,7 +1,7 @@
 {
   "name": "plugin-scout",
-  "description": "Findet gute Claude-Code-Plugins für deinen Use Case, erklärt sie einfach und schickt dir ein Weekly-Update mit neuen Plugins.",
-  "version": "0.2.0",
+  "description": "Findet, prüft und erklärt gute Claude-Code-Plugins für deinen Use Case – mit Sicherheits-Ampel, Vergleich, Aufräumer und einem Weekly, das dazulernt.",
+  "version": "0.3.0",
   "author": {
     "name": "Alessandro081206"
   },

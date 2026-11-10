@@ -1,18 +1,27 @@
 # 🧩 plugin-scout
 
-Ein Claude-Code-Plugin, das gute **andere Plugins** für dich findet und sie so erklärt, dass man sie sofort versteht.
+Ein Claude-Code-Plugin, das gute **andere Plugins** für dich findet, prüft und so erklärt, dass man sie sofort versteht.
 
 ## Was es kann
 
 | Befehl | Was passiert |
 |---|---|
-| `/plugin-scout:start` | **Einstiegs-Guide.** Du sagst, wofür du Claude nutzt, und bekommst die wichtigsten Plugins dafür, also das, was andere mit demselben Use Case nutzen. |
+| `/plugin-scout:start` | **Einstiegs-Guide.** Du sagst, wofür du Claude nutzt, und bekommst die wichtigsten Plugins dafür: Must-haves, Nice-to-haves und eine Überraschung. Dein Use Case wird gespeichert. |
 | `/plugin-scout:suche <Wunsch>` | Sucht gezielt Plugins, z. B. `/plugin-scout:suche Präsentationen bauen`. Du bekommst 3–5 Vorschläge. |
-| `/plugin-scout:weekly` | Zeigt die neuen, guten Plugins der letzten 7 Tage. |
+| `/plugin-scout:check <Plugin>` | **Sicherheits-Check** vor dem Installieren: Was macht es auf deinem Rechner? Sind die Sterne echt? Am Ende gibt's eine Ampel 🟢🟡🔴. |
+| `/plugin-scout:vergleich <A> <B>` | Vergleicht zwei Plugins und sagt, welches besser zu dir passt. |
+| `/plugin-scout:aufraeumen` | Zeigt, welche deiner Plugins doppelt, veraltet oder unbenutzt sind. |
+| `/plugin-scout:weekly` | Neue, gute Plugins der letzten 7 Tage, passend zu dir, plus 1–2 aus ganz anderen Bereichen. |
 
-Du kannst auch einfach fragen: *„Gibt's ein Plugin für Lernkarten?“*, dann springt plugin-scout von selbst an.
+Du kannst auch einfach fragen: *„Gibt's ein Plugin für Lernkarten?“* oder *„Ist Plugin X sicher?“*
 
-Jedes Plugin wird als kleine Karte erklärt: was es macht, wofür du es nutzen kannst und welche Befehle du zum Installieren reinkopierst. plugin-scout **installiert nie selbst etwas**, du entscheidest.
+Jedes Plugin wird als kleine Karte erklärt, mit Ampel 🟢🟡🔴. plugin-scout **installiert und löscht nie selbst etwas**, du entscheidest.
+
+## Weekly, das dazulernt
+
+Jeden Montag um 8 Uhr schreibt ein Claude in der Cloud das Weekly als **Issue** in dieses GitHub-Projekt. Jedes Plugin steht dort als eigener Kommentar. **Reagier mit 👍 oder 👎**, dann zeigt dir das nächste Weekly mehr von dem, was dir gefällt. Was du schon gesehen hast, kommt nicht nochmal.
+
+Dein Use Case aus dem Guide liegt in `daten/profil.md`.
 
 ## Testen
 
@@ -21,12 +30,6 @@ Im Terminal eintippen:
 ```
 claude --plugin-dir ~/Projekte/plugin-scout
 ```
-
-Beim ersten Start schlägt Claude dir den Guide vor.
-
-## Weekly per Mail
-
-Jeden Montag um 8 Uhr läuft automatisch ein Claude in der Cloud. Er schreibt das Weekly als **Issue** in dieses GitHub-Projekt, und GitHub schickt dir dazu eine Benachrichtigung.
 
 ## Selbst erweitern
 
