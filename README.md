@@ -35,3 +35,14 @@ claude --plugin-dir ~/Projekte/plugin-scout
 
 - Neuer Befehl: eine weitere `.md`-Datei in `commands/` anlegen. Der Dateiname wird zum Befehl.
 - Wie gesucht, bewertet und erklärt wird, steht in `skills/plugin-scout/SKILL.md`.
+
+## Installieren
+
+In Claude Code eintippen:
+
+```
+/plugin marketplace add ~/Projekte/plugin-scout
+/plugin install plugin-scout@plugin-scout
+```
+
+Nach Änderungen am Plugin: `/plugin` → Marketplace `plugin-scout` → **Update**, dann Claude neu starten.
