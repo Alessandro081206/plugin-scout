@@ -22,8 +22,10 @@ Jedes Weekly ist ein Issue im Weekly-Repo. Jedes Plugin steht darin als **eigene
 So liest du das Gedächtnis (nur REST, GraphQL geht in der Cloud nicht):
 ```
 gh api "repos/Alessandro081206/plugin-scout/issues?state=all&per_page=20" --jq '.[] | select(.title | startswith("🧩 Plugin-Weekly")) | .number'
+gh api "repos/Alessandro081206/plugin-scout/issues/<NR>" --jq .body
 gh api "repos/Alessandro081206/plugin-scout/issues/<NR>/comments?per_page=100" --jq '.[] | {text: .body[0:200], hoch: .reactions["+1"], runter: .reactions["-1"]}'
 ```
+Lies **Haupttext und Kommentare**. In älteren Weeklys stehen die Plugins im Haupttext (ohne 👍/👎), zählen aber trotzdem als "schon gezeigt". Achte auf GitHub-Links (`github.com/OWNER/REPO`) und Plugin-Namen in Überschriften.
 Daraus ableiten:
 - **Schon gezeigt:** Diese Plugins nicht nochmal vorstellen, außer sie haben ein großes Update bekommen (dann als "Update" kennzeichnen).
 - **👍:** Davon mehr. Ähnliche Themen und Arten von Plugins bevorzugen.
