@@ -1,0 +1,8 @@
+{
+  "name": "plugin",
+  "description": "Mein erstes Claude-Code-Plugin",
+  "version": "0.1.0",
+  "author": {
+    "name": "Alessandro081206"
+  }
+}
