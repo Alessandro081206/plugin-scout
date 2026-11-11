@@ -46,9 +46,9 @@ jobs:
 
 
           echo "Nur erlaubte Dateitypen (Regel fürs Anthropic-Verzeichnis)"
-          VERBOTEN=$(git ls-files | grep -v -E '\.(md|txt|json|ya?ml|png|jpe?g|gif|webp|ico)$' | grep -v -x -e LICENSE -e .gitignore)
+          VERBOTEN=$(git ls-files | grep -v -E '\.(md|txt|json|ya?ml|png|jpe?g|gif|webp|ico)$' | grep -v -x -e LICENSE -e .gitignore || true)
           [ -z "$VERBOTEN" ] && ok "nur Text, JSON, YAML und Bilder" || nein "nicht erlaubte Dateien: $VERBOTEN"
-          SHEBANG=$(git ls-files | while read f; do head -c 2 "$f" | grep -q '^#!' && echo "$f"; done)
+          SHEBANG=$(git ls-files | while read f; do head -c 2 "$f" | grep -q '^#!' && echo "$f"; done || true)
           [ -z "$SHEBANG" ] && ok "keine Datei beginnt mit #!" || nein "Dateien mit #!: $SHEBANG"
 
           echo
