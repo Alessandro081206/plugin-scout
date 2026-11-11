@@ -1,5 +1,5 @@
 ---
-description: Plugin-Aufräumer – findet doppelte, veraltete und unbenutzte Plugins
+description: 'Finds duplicate, outdated and unused plugins you have installed'
 ---
 
 Schau dir die installierten Plugins des Nutzers an und hilf beim **Aufräumen**. Nutze den Skill `plugin-scout`. Deinstalliere **nichts selbst**, nur vorschlagen.

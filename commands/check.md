@@ -1,6 +1,6 @@
 ---
-description: Sicherheits-Check – prüft ein Plugin vor dem Installieren (Ampel 🟢🟡🔴)
-argument-hint: <owner/repo oder Plugin-Name>
+description: 'Safety check before you install a plugin: what it runs, where it connects, whether its stars look real (🟢🟡🔴)'
+argument-hint: '<owner/repo or plugin name>'
 ---
 
 Mach einen gründlichen **Sicherheits-Check** für dieses Plugin: **$ARGUMENTS**

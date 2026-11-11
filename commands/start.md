@@ -1,5 +1,5 @@
 ---
-description: Einstiegs-Guide – findet die wichtigsten Plugins für deinen Use Case
+description: 'Getting-started guide: finds the most useful plugins for what you use Claude for'
 ---
 
 Starte den plugin-scout-Einstiegs-Guide. Nutze dafür den Skill `plugin-scout`. Sprich in der Sprache des Nutzers (siehe Skill), locker und freundlich, ohne Fachchinesisch.

@@ -1,6 +1,6 @@
 ---
-description: Vergleicht zwei (oder mehr) Plugins und sagt, welches besser zu dir passt
-argument-hint: <Plugin A> <Plugin B>
+description: 'Compares two or more plugins side by side and tells you which one fits you better'
+argument-hint: '<plugin A> <plugin B>'
 ---
 
 Vergleiche diese Plugins: **$ARGUMENTS**

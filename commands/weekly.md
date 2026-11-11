@@ -1,6 +1,6 @@
 ---
-description: Weekly-Update – neue, gute Plugins der letzten 7 Tage, passend zu dir
-argument-hint: [issue]
+description: 'New, good plugins from the last 7 days that match you, plus a few surprises'
+argument-hint: '[issue]'
 ---
 
 Erstelle das **Plugin-Weekly**: neue, gute Claude-Code-Plugins der letzten 7 Tage. Nutze dafür den Skill `plugin-scout`.

@@ -1,6 +1,6 @@
 ---
 name: plugin-scout
-description: Findet, bewertet, prüft und erklärt Claude-Code-Plugins. Nutzen, wenn jemand ein Plugin für etwas sucht ("gibt's ein Plugin für ...", "ich brauche ein Plugin, das ...", "welche Plugins lohnen sich für ..."), wissen will, ob ein Plugin sicher ist, zwei Plugins vergleichen will, seine Plugins aufräumen will oder wissen möchte, was es Neues an Plugins gibt. Wird auch von allen /plugin-scout:-Befehlen benutzt.
+description: 'Finds, rates, safety-checks and explains Claude Code plugins in plain language. Use when someone looks for a plugin ("is there a plugin for ...", "I need a plugin that ...", "gibt''s ein Plugin für ...", "which plugins are worth it for ..."), wants to know if a plugin is safe, wants to compare plugins, clean up installed plugins, or see what''s new. Also used by all /plugin-scout: commands.'
 ---
 
 # plugin-scout

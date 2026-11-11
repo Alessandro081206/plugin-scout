@@ -1,6 +1,6 @@
 ---
-description: Sucht Plugins für das, was du brauchst, und erklärt sie einfach
-argument-hint: <wofür du ein Plugin suchst>
+description: 'Finds plugins for what you need and explains them in plain language'
+argument-hint: '<what you need a plugin for>'
 ---
 
 Der Nutzer sucht ein Claude-Code-Plugin für: **$ARGUMENTS**

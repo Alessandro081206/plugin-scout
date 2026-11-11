@@ -1,5 +1,5 @@
 ---
-description: Richtet dein eigenes Weekly ein – jeden Montag neue Plugins als GitHub-Issue, mit 👍/👎-Gedächtnis
+description: 'Sets up your own weekly digest: new plugins every Monday as a GitHub issue that learns from your 👍/👎'
 ---
 
 Richte für den Nutzer das automatische **Plugin-Weekly** ein. Nutze dafür den Skill `plugin-scout`. Sprich in der Sprache des Nutzers (siehe Skill), locker, ohne Fachchinesisch, und erkläre jeden Schritt kurz.
