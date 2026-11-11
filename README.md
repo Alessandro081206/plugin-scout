@@ -32,9 +32,8 @@ Your profile (use case) is stored in that private repo, not in this one.
 
 ## What it runs and where your data goes
 
-plugin-scout is made of instructions for Claude (skills and commands) plus one tiny startup script. No compiled code, no packages to install.
+plugin-scout is made only of instructions for Claude (skills and commands). No scripts, no compiled code, no packages to install.
 
-- **Startup script** (`scripts/erster-start.sh`, runs when a session starts): only checks whether the file `~/.claude/plugin-scout/guide-erledigt` exists and, if not, reminds Claude to mention `/plugin-scout:start` once. It sends nothing anywhere.
 - **Reading your setup:** to avoid recommending plugins you already have, Claude reads `~/.claude/plugins/installed_plugins.json` and `known_marketplaces.json` on your machine. `/plugin-scout:cleanup` also searches your local Claude Code chat logs for plugin names to estimate which plugins you actually use. Nothing from these files is uploaded.
 - **Searching:** Claude uses the GitHub CLI (`gh`), web search and web pages to look up plugins. Only search terms and public repository names are sent.
 - **Your profile** (use case, language, interests you mention) is saved locally in `~/.claude/plugin-scout/profil.md`. If you set up the weekly, it is also stored in **your own private** GitHub repo.

@@ -49,7 +49,5 @@ Gehe Schritt für Schritt vor:
    - "Sag mir einfach, welches ich dir genauer erklären oder checken soll."
    - Kurze Übersicht der Befehle: `/plugin-scout:search <Wunsch>`, `/plugin-scout:check <Plugin>`, `/plugin-scout:compare <A> <B>`, `/plugin-scout:cleanup`, `/plugin-scout:weekly`
    - Gibt es noch kein Daten-Repo: in einem Satz anbieten: "Willst du jeden Montag automatisch ein Weekly mit neuen Plugins? Dann tipp `/plugin-scout:setup-weekly`."
-   - Danach ausführen (ohne es zu erwähnen), damit der Begrüßungs-Hinweis nicht mehr kommt:
-     `mkdir -p ~/.claude/plugin-scout && touch ~/.claude/plugin-scout/guide-erledigt`
 
 Zusätzliche Wünsche des Nutzers (falls angegeben): $ARGUMENTS

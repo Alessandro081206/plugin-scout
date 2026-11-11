@@ -7,7 +7,7 @@ ok()   { echo "  ✅ $1"; }
 nein() { echo "  ❌ $1"; FEHLER=$((FEHLER+1)); }
 
 echo "JSON-Dateien"
-for f in .claude-plugin/plugin.json .claude-plugin/marketplace.json hooks/hooks.json; do
+for f in .claude-plugin/plugin.json .claude-plugin/marketplace.json; do
   if python3 -m json.tool "$f" >/dev/null 2>&1; then ok "$f ist gültig"; else nein "$f ist kein gültiges JSON"; fi
 done
 
@@ -33,14 +33,8 @@ if grep -rn $MUSTER commands skills vorlagen >/dev/null; then
 else ok "Daten-Repo wird nirgends fest eingetragen"; fi
 grep -q '<WEEKLY_REPO>' vorlagen/weekly-routine.md && ok "Routine-Vorlage hat Platzhalter <WEEKLY_REPO>" || nein "Routine-Vorlage ohne Platzhalter"
 
-echo "Start-Hinweis (Hook)"
-T=$(mktemp -d)
-OUT=$(HOME="$T" sh scripts/erster-start.sh); RC=$?
-[ $RC -eq 0 ] && echo "$OUT" | grep -q 'plugin-scout:start' && ok "zeigt Hinweis, solange der Guide nicht gemacht ist" || nein "Hinweis fehlt beim ersten Start"
-mkdir -p "$T/.claude/plugin-scout" && touch "$T/.claude/plugin-scout/guide-erledigt"
-OUT=$(HOME="$T" sh scripts/erster-start.sh); RC=$?
-[ $RC -eq 0 ] && [ -z "$OUT" ] && ok "schweigt, wenn der Guide erledigt ist" || nein "Hinweis kommt trotz erledigtem Guide"
-rm -rf "$T"
+echo "Keine Skripte, die automatisch laufen"
+[ ! -e hooks ] && [ ! -e scripts ] && ok "keine Hooks/Skripte (dürfen nur verifizierte Firmen im Verzeichnis)" || nein "hooks/ oder scripts/ vorhanden"
 
 if command -v claude >/dev/null 2>&1; then
   echo "Claude-Prüfung"
