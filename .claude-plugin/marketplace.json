@@ -9,7 +9,7 @@
       "name": "plugin-scout",
       "source": "./",
       "description": "Finds the right Claude Code plugins for you, checks them for red flags (🟢🟡🔴) and explains them in plain language. Includes side-by-side comparisons, a cleanup helper and a weekly digest that learns what you like.",
-      "version": "0.6.2"
+      "version": "0.6.3"
     }
   ]
 }

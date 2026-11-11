@@ -63,7 +63,7 @@ Nach Änderungen am Plugin: `/plugin` → Marketplace `plugin-scout` → **Updat
 ## Testen
 
 - Schnell ausprobieren: `claude --plugin-dir ~/Projekte/plugin-scout`
-- Aufbau prüfen: `sh tests/pruefen.sh` (kostenlos, läuft auf GitHub auch automatisch bei jedem Hochladen)
+- Aufbau prüfen: läuft automatisch auf GitHub bei jedem Hochladen (`.github/workflows/tests.yml`)
 - Verhalten prüfen: `claude plugin eval . --allow-tools Bash WebFetch WebSearch` (Tests in `evals/`, kostet etwas Claude-Nutzung, ca. 1 $ für alle drei)
 
 ## Selbst erweitern

@@ -62,7 +62,7 @@ claude --plugin-dir ./plugin-scout
 
 ## Tests
 
-- `sh tests/pruefen.sh` checks the structure (free, also runs automatically on GitHub on every push)
+- A structure check runs automatically on GitHub on every push (`.github/workflows/tests.yml`)
 - `claude plugin eval . --allow-tools Bash WebFetch WebSearch` runs behavior tests from `evals/` (uses some of your Claude usage, about $1 for all three)
 
 ## Contributing
