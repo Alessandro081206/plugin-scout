@@ -28,6 +28,17 @@ Jedes Plugin wird als kleine Karte erklärt, mit Ampel 🟢🟡🔴. plugin-scou
 
 Dein Profil (Use Case) liegt in diesem privaten Repo, nicht hier.
 
+## Was es ausführt und wohin deine Daten gehen
+
+plugin-scout besteht aus Anleitungen für Claude (Skills und Befehle) und einem winzigen Startskript. Kein kompilierter Code, keine Pakete zum Installieren.
+
+- **Startskript** (`scripts/erster-start.sh`, läuft beim Start einer Sitzung): prüft nur, ob die Datei `~/.claude/plugin-scout/guide-erledigt` existiert, und erinnert Claude sonst einmal an `/plugin-scout:start`. Es schickt nichts irgendwohin.
+- **Deine Plugins lesen:** Damit nichts doppelt empfohlen wird, liest Claude `~/.claude/plugins/installed_plugins.json` und `known_marketplaces.json` auf deinem Rechner. `/plugin-scout:cleanup` durchsucht außerdem deine lokalen Claude-Code-Chatverläufe nach Plugin-Namen, um zu schätzen, welche Plugins du wirklich benutzt. Davon wird nichts hochgeladen.
+- **Suchen:** Claude nutzt die GitHub-CLI (`gh`), die Websuche und Webseiten. Verschickt werden nur Suchbegriffe und Namen öffentlicher Repos.
+- **Dein Profil** (Use Case, Sprache, Interessen, die du nennst) liegt lokal in `~/.claude/plugin-scout/profil.md`. Wenn du das Weekly einrichtest, auch in **deinem eigenen privaten** GitHub-Repo.
+- **Weekly (optional):** `/plugin-scout:setup-weekly` fragt, bevor es ein privates Repo in deinem GitHub-Konto und eine geplante Claude-Routine anlegt, die das Weekly dort als Issue postet.
+- **Niemals:** Es installiert oder löscht keine Plugins, ändert keine Einstellungen und hat keinen eigenen Server. An den Autor geht nichts.
+
 ## Installieren
 
 In Claude Code eintippen:
