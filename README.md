@@ -40,6 +40,8 @@ plugin-scout is made only of instructions for Claude (skills and commands). No s
 - **Weekly (optional):** `/plugin-scout:setup-weekly` asks before it creates a private repo on your GitHub account and a scheduled Claude routine that posts the weekly there as an issue.
 - **Never:** it never installs or removes plugins, never changes your settings, and has no server of its own. Nothing is sent to the author.
 
+Full details: [Privacy Policy](PRIVACY.md)
+
 ## Install
 
 In Claude Code, type:

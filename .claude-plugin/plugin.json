@@ -1,7 +1,7 @@
 {
   "name": "plugin-scout",
   "description": "Finds the right Claude Code plugins for you, checks them for red flags (🟢🟡🔴) and explains them in plain language. Includes side-by-side comparisons, a cleanup helper and a weekly digest that learns what you like.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": {
     "name": "Alessandro081206"
   },
@@ -16,5 +16,6 @@
     "german"
   ],
   "homepage": "https://github.com/Alessandro081206/plugin-scout",
-  "license": "MIT"
+  "license": "MIT",
+  "privacyPolicyUrl": "https://github.com/Alessandro081206/plugin-scout/blob/main/PRIVACY.md"
 }
