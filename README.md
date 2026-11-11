@@ -4,19 +4,21 @@
 
 A Claude Code plugin that finds good **other plugins** for you, checks them for safety, and explains them so anyone can understand them, no tech jargon.
 
-> **Note:** plugin-scout talks to you in **German**. It's made for people who aren't professional developers.
+> Made for people who aren't professional developers. plugin-scout replies **in your language**: write in English, get English; write in German, get German.
+
+<p align="center"><img src="assets/card.png" alt="plugin-scout explaining a plugin with a traffic-light rating" width="760"></p>
 
 ## What it does
 
 | Command | What happens |
 |---|---|
 | `/plugin-scout:start` | **Getting-started guide.** Tell it what you use Claude for and get the most important plugins: must-haves, nice-to-haves and one surprise. Your use case is saved. |
-| `/plugin-scout:suche <wish>` | Searches for plugins, e.g. `/plugin-scout:suche build presentations`. You get 3–5 suggestions. |
+| `/plugin-scout:search <wish>` | Searches for plugins, e.g. `/plugin-scout:search build presentations`. You get 3–5 suggestions. |
 | `/plugin-scout:check <plugin>` | **Safety check** before installing: What does it do on your computer? Are the GitHub stars real? Ends with a traffic light 🟢🟡🔴. |
-| `/plugin-scout:vergleich <A> <B>` | Compares two plugins and tells you which one fits you better. |
-| `/plugin-scout:aufraeumen` | Shows which of your plugins are duplicates, outdated or unused. |
+| `/plugin-scout:compare <A> <B>` | Compares two plugins and tells you which one fits you better. |
+| `/plugin-scout:cleanup` | Shows which of your plugins are duplicates, outdated or unused. |
 | `/plugin-scout:weekly` | New, good plugins from the last 7 days that match you, plus 1–2 from completely different areas. |
-| `/plugin-scout:weekly-einrichten` | Sets up your **automatic weekly** (every Monday as a GitHub issue). |
+| `/plugin-scout:setup-weekly` | Sets up your **automatic weekly** (every Monday as a GitHub issue). |
 
 You can also just ask: *"Is there a plugin for flashcards?"* or *"Is plugin X safe?"*
 
@@ -24,7 +26,7 @@ Every plugin is shown as a small card with a traffic light 🟢🟡🔴. plugin-
 
 ## A weekly that learns
 
-`/plugin-scout:weekly-einrichten` creates a **private** GitHub repo just for you (e.g. `your-name/plugin-scout-daten`) and a cloud routine. Every Monday it posts the weekly there as an **issue**, with each plugin as its own comment. **React with 👍 or 👎** and the next weekly shows more of what you like. Plugins you've already seen don't come back.
+`/plugin-scout:setup-weekly` creates a **private** GitHub repo just for you (e.g. `your-name/plugin-scout-daten`) and a cloud routine. Every Monday it posts the weekly there as an **issue**, with each plugin as its own comment. **React with 👍 or 👎** and the next weekly shows more of what you like. Plugins you've already seen don't come back.
 
 Your profile (use case) is stored in that private repo, not in this one.
 

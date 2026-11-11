@@ -2,7 +2,7 @@
 description: Richtet dein eigenes Weekly ein – jeden Montag neue Plugins als GitHub-Issue, mit 👍/👎-Gedächtnis
 ---
 
-Richte für den Nutzer das automatische **Plugin-Weekly** ein. Nutze dafür den Skill `plugin-scout`. Sprich Deutsch, locker, ohne Fachchinesisch, und erkläre jeden Schritt kurz.
+Richte für den Nutzer das automatische **Plugin-Weekly** ein. Nutze dafür den Skill `plugin-scout`. Sprich in der Sprache des Nutzers (siehe Skill), locker, ohne Fachchinesisch, und erkläre jeden Schritt kurz.
 
 **Grundregel:** Nichts anlegen, ohne vorher zu fragen. Jeder Schritt, der etwas auf GitHub oder in der Cloud erstellt, wird vorher in einem Satz angekündigt.
 

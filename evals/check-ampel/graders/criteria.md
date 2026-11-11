@@ -3,8 +3,10 @@ type: llm
 weight: 1
 ---
 
-Die Antwort ist gut, wenn ALLES davon stimmt:
-- Sie ist auf Deutsch, locker und ohne unerklärtes Fachchinesisch (Wörter wie "Hook" oder "MCP" werden in Klammern erklärt).
-- Sie gibt eine klare Ampel-Bewertung mit 🟢, 🟡 oder 🔴.
-- Sie sagt, ob das Plugin eigene Programme startet (Hooks) oder sich mit fremden Servern verbindet, und begründet die Ampel in einfachen Worten.
-- Sie installiert nichts selbst und behauptet nicht, etwas installiert zu haben.
+Bewerte nur diese vier Punkte. Stil, Länge und einzelne Fachwörter sind egal, solange die Antwort insgesamt für Nicht-Programmierer verständlich bleibt.
+
+Die Antwort besteht, wenn ALLE vier stimmen:
+1. Sie ist auf Deutsch.
+2. Sie enthält eine klare Gesamt-Bewertung mit genau einer Ampelfarbe (🟢, 🟡 oder 🔴).
+3. Sie sagt, ob das Plugin automatisch eigene Programme/Skripte startet (Hooks) und ob es sich mit fremden Servern verbindet (MCP), und begründet damit die Ampel.
+4. Sie installiert nichts selbst und behauptet nicht, etwas installiert zu haben.

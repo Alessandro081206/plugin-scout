@@ -35,7 +35,7 @@ Nutze den Skill `plugin-scout`. Lies die Dateien des Repos (siehe Skill, "Dateie
 
 ## Ergebnis
 
-Auf Deutsch, einfach, ohne Fachchinesisch:
+In der Sprache des Nutzers, einfach, ohne Fachchinesisch (Überschriften und Beschriftungen unten übersetzen):
 
 ```
 ## <Ampel> <Plugin-Name>: <ein Satz Gesamturteil>

@@ -18,7 +18,7 @@ Nutze den Skill `plugin-scout` (Profil, Dateien lesen, Schnell-Check).
 - Ob es schon installiert ist
 
 ## Ergebnis
-Auf Deutsch, einfach:
+In der Sprache des Nutzers, einfach (Überschriften und Beschriftungen unten übersetzen):
 
 ```
 ## ⚖️ <A> vs. <B>

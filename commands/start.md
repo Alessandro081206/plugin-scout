@@ -2,7 +2,7 @@
 description: Einstiegs-Guide – findet die wichtigsten Plugins für deinen Use Case
 ---
 
-Starte den plugin-scout-Einstiegs-Guide. Nutze dafür den Skill `plugin-scout`. Sprich Deutsch, locker und freundlich, ohne Fachchinesisch.
+Starte den plugin-scout-Einstiegs-Guide. Nutze dafür den Skill `plugin-scout`. Sprich in der Sprache des Nutzers (siehe Skill), locker und freundlich, ohne Fachchinesisch.
 
 Gehe Schritt für Schritt vor:
 
@@ -14,6 +14,8 @@ Gehe Schritt für Schritt vor:
    - Schreibe `~/.claude/plugin-scout/profil.md` (Ordner vorher anlegen) in diesem Format:
      ```
      # Profil
+     ## Sprache
+     - <Sprache, in der der Nutzer schreibt, z. B. Deutsch oder English>
      ## Use Case
      - <Bereiche, mit eigenen Worten des Nutzers>
      ## Interessen / Alltag
@@ -45,8 +47,8 @@ Gehe Schritt für Schritt vor:
 
 6. **Abschluss:**
    - "Sag mir einfach, welches ich dir genauer erklären oder checken soll."
-   - Kurze Übersicht der Befehle: `/plugin-scout:suche <Wunsch>`, `/plugin-scout:check <Plugin>`, `/plugin-scout:vergleich <A> <B>`, `/plugin-scout:aufraeumen`, `/plugin-scout:weekly`
-   - Gibt es noch kein Daten-Repo: in einem Satz anbieten: "Willst du jeden Montag automatisch ein Weekly mit neuen Plugins? Dann tipp `/plugin-scout:weekly-einrichten`."
+   - Kurze Übersicht der Befehle: `/plugin-scout:search <Wunsch>`, `/plugin-scout:check <Plugin>`, `/plugin-scout:compare <A> <B>`, `/plugin-scout:cleanup`, `/plugin-scout:weekly`
+   - Gibt es noch kein Daten-Repo: in einem Satz anbieten: "Willst du jeden Montag automatisch ein Weekly mit neuen Plugins? Dann tipp `/plugin-scout:setup-weekly`."
    - Danach ausführen (ohne es zu erwähnen), damit der Begrüßungs-Hinweis nicht mehr kommt:
      `mkdir -p ~/.claude/plugin-scout && touch ~/.claude/plugin-scout/guide-erledigt`
 

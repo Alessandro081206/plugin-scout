@@ -19,7 +19,7 @@ Schau dir die installierten Plugins des Nutzers an und hilf beim **Aufräumen**.
 - **Sicherheit:** Hat ein Plugin Hooks/MCP und ist dir unbekannt? Dann `/plugin-scout:check` vorschlagen.
 
 ## 3. Ergebnis
-Auf Deutsch, einfach:
+In der Sprache des Nutzers, einfach (Überschriften und Beschriftungen unten übersetzen):
 
 ```
 ## 🧹 Plugin-Check: <Anzahl> Plugins installiert

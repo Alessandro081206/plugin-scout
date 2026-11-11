@@ -25,7 +25,7 @@ Argument: `$ARGUMENTS`
 - Lieber 4 richtig gute als 8 mittelmäßige. Gab es diese Woche nichts wirklich Gutes, sag das ehrlich und zeig höchstens 1–2.
 
 ## 4. Aufbau
-Text des Issues bzw. der Chat-Antwort:
+Text des Issues bzw. der Chat-Antwort, in der Sprache des Nutzers (siehe Skill; in der Cloud: aus dem Profil, sonst Englisch). Der Titel bleibt **immer** `🧩 Plugin-Weekly – KW <Kalenderwoche>`, egal in welcher Sprache, sonst findet das Gedächtnis die alten Weeklys nicht.
 ```
 # 🧩 Plugin-Weekly – KW <Kalenderwoche>
 
@@ -38,13 +38,13 @@ Text des Issues bzw. der Chat-Antwort:
 👇 Jedes Plugin steht unten als eigener Kommentar. Reagier mit 👍 oder 👎, dann lerne ich, was dir gefällt.
 
 ---
-Gezielt suchen: `/plugin-scout:suche <was du brauchst>` · Vor dem Installieren prüfen: `/plugin-scout:check <owner/repo>`
+Gezielt suchen: `/plugin-scout:search <was du brauchst>` · Vor dem Installieren prüfen: `/plugin-scout:check <owner/repo>`
 ```
 Dann jedes Plugin als **eigene Karte** (aus dem Skill), jeweils mit einer Überschrift-Zeile davor: `🏆 Top-Tipp der Woche`, `🎯 Für dich` oder `🔭 Über den Tellerrand`.
 
 ## 5. Ausgabe
 - **Ohne** `issue` im Argument: Alles im Chat zeigen (Einleitung + alle Karten untereinander). Den 👍/👎-Satz weglassen.
-- **Mit** `issue` im Argument: Als GitHub-Issue ins Daten-Repo `<WEEKLY_REPO>` posten (wie man es findet: siehe Skill). Gibt es keins, nicht posten, sondern im Chat zeigen und `/plugin-scout:weekly-einrichten` vorschlagen. **Nur über REST** (`gh issue create` und GraphQL gehen in der Cloud nicht):
+- **Mit** `issue` im Argument: Als GitHub-Issue ins Daten-Repo `<WEEKLY_REPO>` posten (wie man es findet: siehe Skill). Gibt es keins, nicht posten, sondern im Chat zeigen und `/plugin-scout:setup-weekly` vorschlagen. **Nur über REST** (`gh issue create` und GraphQL gehen in der Cloud nicht):
   1. Einleitung in eine Datei schreiben (z. B. `weekly.md` im Scratchpad bzw. in `/tmp`).
   2. Issue anlegen:
      `gh api repos/<WEEKLY_REPO>/issues -f title="🧩 Plugin-Weekly – KW <KW>" -F body=@<datei> --jq .number`

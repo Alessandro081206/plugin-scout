@@ -2,19 +2,21 @@
 
 🇬🇧 [English version](README.md)
 
-Ein Claude-Code-Plugin, das gute **andere Plugins** für dich findet, prüft und so erklärt, dass man sie sofort versteht.
+Ein Claude-Code-Plugin, das gute **andere Plugins** für dich findet, prüft und so erklärt, dass man sie sofort versteht. Es antwortet in deiner Sprache: Schreibst du Deutsch, antwortet es auf Deutsch.
+
+<p align="center"><img src="assets/card.png" alt="plugin-scout erklärt ein Plugin mit Ampel-Bewertung" width="760"></p>
 
 ## Was es kann
 
 | Befehl | Was passiert |
 |---|---|
 | `/plugin-scout:start` | **Einstiegs-Guide.** Du sagst, wofür du Claude nutzt, und bekommst die wichtigsten Plugins dafür: Must-haves, Nice-to-haves und eine Überraschung. Dein Use Case wird gespeichert. |
-| `/plugin-scout:suche <Wunsch>` | Sucht gezielt Plugins, z. B. `/plugin-scout:suche Präsentationen bauen`. Du bekommst 3–5 Vorschläge. |
+| `/plugin-scout:search <Wunsch>` | Sucht gezielt Plugins, z. B. `/plugin-scout:search Präsentationen bauen`. Du bekommst 3–5 Vorschläge. |
 | `/plugin-scout:check <Plugin>` | **Sicherheits-Check** vor dem Installieren: Was macht es auf deinem Rechner? Sind die Sterne echt? Am Ende gibt's eine Ampel 🟢🟡🔴. |
-| `/plugin-scout:vergleich <A> <B>` | Vergleicht zwei Plugins und sagt, welches besser zu dir passt. |
-| `/plugin-scout:aufraeumen` | Zeigt, welche deiner Plugins doppelt, veraltet oder unbenutzt sind. |
+| `/plugin-scout:compare <A> <B>` | Vergleicht zwei Plugins und sagt, welches besser zu dir passt. |
+| `/plugin-scout:cleanup` | Zeigt, welche deiner Plugins doppelt, veraltet oder unbenutzt sind. |
 | `/plugin-scout:weekly` | Neue, gute Plugins der letzten 7 Tage, passend zu dir, plus 1–2 aus ganz anderen Bereichen. |
-| `/plugin-scout:weekly-einrichten` | Richtet dein **automatisches Weekly** ein (jeden Montag als GitHub-Issue). |
+| `/plugin-scout:setup-weekly` | Richtet dein **automatisches Weekly** ein (jeden Montag als GitHub-Issue). |
 
 Du kannst auch einfach fragen: *„Gibt's ein Plugin für Lernkarten?“* oder *„Ist Plugin X sicher?“*
 
@@ -22,7 +24,7 @@ Jedes Plugin wird als kleine Karte erklärt, mit Ampel 🟢🟡🔴. plugin-scou
 
 ## Weekly, das dazulernt
 
-`/plugin-scout:weekly-einrichten` legt dir ein **privates** GitHub-Repo an (z. B. `dein-name/plugin-scout-daten`) und eine Routine in der Cloud. Jeden Montag schreibt Claude das Weekly dort als **Issue** hinein, jedes Plugin als eigenen Kommentar. **Reagier mit 👍 oder 👎**, dann zeigt dir das nächste Weekly mehr von dem, was dir gefällt. Was du schon gesehen hast, kommt nicht nochmal.
+`/plugin-scout:setup-weekly` legt dir ein **privates** GitHub-Repo an (z. B. `dein-name/plugin-scout-daten`) und eine Routine in der Cloud. Jeden Montag schreibt Claude das Weekly dort als **Issue** hinein, jedes Plugin als eigenen Kommentar. **Reagier mit 👍 oder 👎**, dann zeigt dir das nächste Weekly mehr von dem, was dir gefällt. Was du schon gesehen hast, kommt nicht nochmal.
 
 Dein Profil (Use Case) liegt in diesem privaten Repo, nicht hier.
 

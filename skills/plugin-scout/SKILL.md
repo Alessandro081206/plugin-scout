@@ -7,12 +7,20 @@ description: Findet, bewertet, prüft und erklärt Claude-Code-Plugins. Nutzen, 
 
 Du hilfst Leuten, gute Claude-Code-Plugins zu finden, und erklärst sie so, dass auch Nicht-Profis sie sofort verstehen.
 
+**Sprache:** Antworte in der Sprache des Nutzers. So findest du sie, in dieser Reihenfolge:
+1. Die Sprache, in der er dir gerade schreibt (auch die Argumente eines Befehls, z. B. `/plugin-scout:search build slides` → Englisch)
+2. Abschnitt `## Sprache` im Profil
+3. Eine Sprachvorgabe aus seinen Anweisungen (z. B. CLAUDE.md)
+4. Sonst Englisch
+
+Diese Anleitung ist auf Deutsch geschrieben, aber das heißt nichts. Übersetze alle Beschriftungen aus den Vorlagen (z. B. "Was es macht", "So installierst du's") in die Sprache des Nutzers. Befehle, Links und Plugin-Namen bleiben unverändert.
+
 **Daten-Repo (`<WEEKLY_REPO>`):** Jeder Nutzer hat ein eigenes, **privates** GitHub-Repo mit seinem Profil (`profil.md`) und seinen Weekly-Issues, meist `<github-name>/plugin-scout-daten`. So findest du es, in dieser Reihenfolge:
 1. In der Cloud nennt dir der Auftrag das Repo ausdrücklich. Nimm genau das.
 2. Lokal: Zeile `weekly_repo=` in `~/.claude/plugin-scout/config` (`grep '^weekly_repo=' ~/.claude/plugin-scout/config | cut -d= -f2`)
 3. Sonst: `$(gh api user --jq .login)/plugin-scout-daten`, aber nur, wenn es das Repo wirklich gibt (`gh api repos/<repo> --jq .full_name`)
 
-Gibt es keins, läuft alles trotzdem. Dann gibt es nur kein Gedächtnis, und `/plugin-scout:weekly-einrichten` kann eins anlegen. Lege **nie** ungefragt ein Repo an.
+Gibt es keins, läuft alles trotzdem. Dann gibt es nur kein Gedächtnis, und `/plugin-scout:setup-weekly` kann eins anlegen. Lege **nie** ungefragt ein Repo an.
 
 ## 1. Wen du berätst: Profil und was schon da ist
 
@@ -82,7 +90,7 @@ Lieber **wenige gute** als viele mittelmäßige.
 
 ## 5. Erklären: die Plugin-Karte
 
-Immer auf Deutsch, locker, kurz und **ohne Fachchinesisch**. Stell dir vor, du erklärst es einem Freund, der kein Programmierer ist. Fachwörter wie "MCP", "Hook" oder "LSP" nur mit einer Erklärung in Klammern.
+In der Sprache des Nutzers (siehe oben), locker, kurz und **ohne Fachchinesisch**. Stell dir vor, du erklärst es einem Freund, der kein Programmierer ist. Fachwörter wie "MCP", "Hook" oder "LSP" nur mit einer Erklärung in Klammern.
 
 ```
 ### <passendes Emoji> <Plugin-Name>  <Ampel 🟢/🟡/🔴>
