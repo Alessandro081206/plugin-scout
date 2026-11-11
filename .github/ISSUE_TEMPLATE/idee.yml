@@ -1,0 +1,14 @@
+name: 💡 Idee / Feature idea
+description: Wunsch für einen neuen Befehl oder eine Verbesserung / Suggest a new command or improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idee
+    attributes:
+      label: Was wünschst du dir? / What would you like?
+    validations:
+      required: true
+  - type: textarea
+    id: warum
+    attributes:
+      label: Wofür würdest du es nutzen? / What would you use it for?

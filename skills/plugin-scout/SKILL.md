@@ -7,23 +7,28 @@ description: Findet, bewertet, prüft und erklärt Claude-Code-Plugins. Nutzen, 
 
 Du hilfst Leuten, gute Claude-Code-Plugins zu finden, und erklärst sie so, dass auch Nicht-Profis sie sofort verstehen.
 
-**Weekly-Repo:** `Alessandro081206/plugin-scout`. Hier liegen das Profil (`daten/profil.md`) und die Weekly-Issues.
+**Daten-Repo (`<WEEKLY_REPO>`):** Jeder Nutzer hat ein eigenes, **privates** GitHub-Repo mit seinem Profil (`profil.md`) und seinen Weekly-Issues, meist `<github-name>/plugin-scout-daten`. So findest du es, in dieser Reihenfolge:
+1. In der Cloud nennt dir der Auftrag das Repo ausdrücklich. Nimm genau das.
+2. Lokal: Zeile `weekly_repo=` in `~/.claude/plugin-scout/config` (`grep '^weekly_repo=' ~/.claude/plugin-scout/config | cut -d= -f2`)
+3. Sonst: `$(gh api user --jq .login)/plugin-scout-daten`, aber nur, wenn es das Repo wirklich gibt (`gh api repos/<repo> --jq .full_name`)
+
+Gibt es keins, läuft alles trotzdem. Dann gibt es nur kein Gedächtnis, und `/plugin-scout:weekly-einrichten` kann eins anlegen. Lege **nie** ungefragt ein Repo an.
 
 ## 1. Wen du berätst: Profil und was schon da ist
 
-**Profil:** Lies das Profil des Nutzers, falls vorhanden. Erst lokal `~/.claude/plugin-scout/profil.md`, sonst `daten/profil.md` im ausgecheckten Repo (in der Cloud). Darin stehen Use Case, Interessen und was er nicht mag. Richte Vorschläge danach aus. Gibt es kein Profil, frag kurz nach dem Use Case oder schlag `/plugin-scout:start` vor.
+**Profil:** Lies das Profil des Nutzers, falls vorhanden. Erst lokal `~/.claude/plugin-scout/profil.md`, sonst `profil.md` im Daten-Repo (in der Cloud ist es mit ausgecheckt, sonst `gh api repos/<WEEKLY_REPO>/contents/profil.md --jq .content | base64 -d`). Darin stehen Use Case, Interessen und was er nicht mag. Richte Vorschläge danach aus. Gibt es kein Profil, frag kurz nach dem Use Case oder schlag `/plugin-scout:start` vor.
 
 **Installiert:** Lies `~/.claude/plugins/installed_plugins.json` (Schlüssel = `plugin@marketplace`). Diese Plugins **nicht** nochmal empfehlen. `~/.claude/plugins/known_marketplaces.json` zeigt schon hinzugefügte Marketplaces. Fehlen die Dateien (z. B. in der Cloud), überspring das.
 
 ## 2. Gedächtnis: was schon gezeigt wurde und was gefallen hat
 
-Jedes Weekly ist ein Issue im Weekly-Repo. Jedes Plugin steht darin als **eigener Kommentar**, auf den der Nutzer mit 👍 oder 👎 reagieren kann.
+Jedes Weekly ist ein Issue im Daten-Repo. Jedes Plugin steht darin als **eigener Kommentar**, auf den der Nutzer mit 👍 oder 👎 reagieren kann.
 
 So liest du das Gedächtnis (nur REST, GraphQL geht in der Cloud nicht):
 ```
-gh api "repos/Alessandro081206/plugin-scout/issues?state=all&per_page=20" --jq '.[] | select(.title | startswith("🧩 Plugin-Weekly")) | .number'
-gh api "repos/Alessandro081206/plugin-scout/issues/<NR>" --jq .body
-gh api "repos/Alessandro081206/plugin-scout/issues/<NR>/comments?per_page=100" --jq '.[] | {text: .body[0:200], hoch: .reactions["+1"], runter: .reactions["-1"]}'
+gh api "repos/<WEEKLY_REPO>/issues?state=all&per_page=20" --jq '.[] | select(.title | startswith("🧩 Plugin-Weekly")) | .number'
+gh api "repos/<WEEKLY_REPO>/issues/<NR>" --jq .body
+gh api "repos/<WEEKLY_REPO>/issues/<NR>/comments?per_page=100" --jq '.[] | {text: .body[0:200], hoch: .reactions["+1"], runter: .reactions["-1"]}'
 ```
 Lies **Haupttext und Kommentare**. In älteren Weeklys stehen die Plugins im Haupttext (ohne 👍/👎), zählen aber trotzdem als "schon gezeigt". Achte auf GitHub-Links (`github.com/OWNER/REPO`) und Plugin-Namen in Überschriften.
 Daraus ableiten:

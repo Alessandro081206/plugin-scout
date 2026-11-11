@@ -1,0 +1,28 @@
+name: 🐞 Fehler melden / Report a bug
+description: Etwas funktioniert nicht wie erwartet / Something doesn't work as expected
+labels: ["bug"]
+body:
+  - type: textarea
+    id: gemacht
+    attributes:
+      label: Was hast du gemacht? / What did you do?
+      description: Welchen Befehl hast du eingetippt? / Which command did you type?
+      placeholder: "/plugin-scout:check owner/repo"
+    validations:
+      required: true
+  - type: textarea
+    id: passiert
+    attributes:
+      label: Was ist passiert? / What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Was hast du erwartet? / What did you expect?
+  - type: input
+    id: version
+    attributes:
+      label: plugin-scout-Version / version
+      description: Steht unter `/plugin` / Shown in `/plugin`
+      placeholder: "0.4.0"

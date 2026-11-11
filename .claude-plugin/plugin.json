@@ -1,10 +1,20 @@
 {
   "name": "plugin-scout",
   "description": "Findet, prüft und erklärt gute Claude-Code-Plugins für deinen Use Case – mit Sicherheits-Ampel, Vergleich, Aufräumer und einem Weekly, das dazulernt.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "Alessandro081206"
   },
   "repository": "https://github.com/Alessandro081206/plugin-scout",
-  "keywords": ["plugins", "discovery", "onboarding", "weekly"]
+  "keywords": [
+    "plugins",
+    "discovery",
+    "plugin-finder",
+    "security",
+    "onboarding",
+    "weekly",
+    "german"
+  ],
+  "homepage": "https://github.com/Alessandro081206/plugin-scout",
+  "license": "MIT"
 }

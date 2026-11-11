@@ -44,10 +44,10 @@ Dann jedes Plugin als **eigene Karte** (aus dem Skill), jeweils mit einer Übers
 
 ## 5. Ausgabe
 - **Ohne** `issue` im Argument: Alles im Chat zeigen (Einleitung + alle Karten untereinander). Den 👍/👎-Satz weglassen.
-- **Mit** `issue` im Argument: Als GitHub-Issue posten. **Nur über REST** (`gh issue create` und GraphQL gehen in der Cloud nicht):
+- **Mit** `issue` im Argument: Als GitHub-Issue ins Daten-Repo `<WEEKLY_REPO>` posten (wie man es findet: siehe Skill). Gibt es keins, nicht posten, sondern im Chat zeigen und `/plugin-scout:weekly-einrichten` vorschlagen. **Nur über REST** (`gh issue create` und GraphQL gehen in der Cloud nicht):
   1. Einleitung in eine Datei schreiben (z. B. `weekly.md` im Scratchpad bzw. in `/tmp`).
   2. Issue anlegen:
-     `gh api repos/Alessandro081206/plugin-scout/issues -f title="🧩 Plugin-Weekly – KW <KW>" -F body=@<datei> --jq .number`
+     `gh api repos/<WEEKLY_REPO>/issues -f title="🧩 Plugin-Weekly – KW <KW>" -F body=@<datei> --jq .number`
   3. Jede Karte in eine eigene Datei schreiben und als **eigenen Kommentar** posten, in der Reihenfolge 🏆, 🎯, 🔭:
-     `gh api repos/Alessandro081206/plugin-scout/issues/<NR>/comments -F body=@<karte> --jq .html_url`
+     `gh api repos/<WEEKLY_REPO>/issues/<NR>/comments -F body=@<karte> --jq .html_url`
   4. Den Link zum Issue ausgeben.

@@ -21,9 +21,9 @@ Gehe Schritt für Schritt vor:
      ## Lieber nicht
      - <falls er etwas ausschließt>
      ```
-   - Lade es zusätzlich ins Weekly-Repo hoch, damit das Weekly in der Cloud es kennt (nur wenn `gh` eingeloggt ist, sonst überspringen):
+   - Gibt es schon ein Daten-Repo (`<WEEKLY_REPO>`, wie man es findet: siehe Skill), lade das Profil dorthin hoch, damit das Weekly in der Cloud es kennt. Gibt es keins oder ist `gh` nicht eingeloggt: überspringen, **kein** Repo anlegen.
      ```
-     R=repos/Alessandro081206/plugin-scout/contents/daten/profil.md
+     R=repos/<WEEKLY_REPO>/contents/profil.md
      C="$(base64 < ~/.claude/plugin-scout/profil.md | tr -d '\n')"
      SHA=$(gh api "$R" --jq .sha 2>/dev/null)
      if [ -n "$SHA" ]; then gh api -X PUT "$R" -f message="Profil aktualisiert" -f content="$C" -f sha="$SHA" --jq .content.path
@@ -46,6 +46,7 @@ Gehe Schritt für Schritt vor:
 6. **Abschluss:**
    - "Sag mir einfach, welches ich dir genauer erklären oder checken soll."
    - Kurze Übersicht der Befehle: `/plugin-scout:suche <Wunsch>`, `/plugin-scout:check <Plugin>`, `/plugin-scout:vergleich <A> <B>`, `/plugin-scout:aufraeumen`, `/plugin-scout:weekly`
+   - Gibt es noch kein Daten-Repo: in einem Satz anbieten: "Willst du jeden Montag automatisch ein Weekly mit neuen Plugins? Dann tipp `/plugin-scout:weekly-einrichten`."
    - Danach ausführen (ohne es zu erwähnen), damit der Begrüßungs-Hinweis nicht mehr kommt:
      `mkdir -p ~/.claude/plugin-scout && touch ~/.claude/plugin-scout/guide-erledigt`
 
