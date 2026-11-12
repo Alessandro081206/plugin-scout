@@ -16,6 +16,7 @@ All of this is read on your own computer by Claude. None of it is uploaded by pl
 ## What plugin-scout stores
 
 - **Your profile** (`~/.claude/plugin-scout/profil.md`): the use case, language and interests you tell it in `/plugin-scout:start`.
+- **Suggestion history** (`~/.claude/plugin-scout/vorschlaege.txt`): which plugins plugin-scout suggested, when, and whether you later installed, kept or removed them (checked against `installed_plugins.json`). Used only to improve your own suggestions. A short summary (topics and plugin names, no code) is kept in your profile under `## Gelernt`.
 - **Project notes** (`~/.claude/plugin-scout/projekte/`): a short local summary per project (type, main tools, size, suggested plugins, how often a tip was shown). No code and no file contents.
 - **Optional, only if you say yes:** the *type* of a project (e.g. "Next.js website") is added to your profile so the weekly can match it. Never project names, paths or contents.
 - **A small config file** (`~/.claude/plugin-scout/config`): the name of your weekly data repository.

@@ -45,6 +45,10 @@ jobs:
           [ ! -e hooks ] && [ ! -e scripts ] && ok "keine Hooks/Skripte (dürfen nur verifizierte Firmen im Verzeichnis)" || nein "hooks/ oder scripts/ vorhanden"
 
 
+          echo "Keine \$1, \$2 … in Befehlen und Skills (Claude Code ersetzt sie durch Argumente)"
+          DOLLAR=$(grep -n -E '\$[0-9]' commands/*.md skills/*/SKILL.md || true)
+          [ -z "$DOLLAR" ] && ok "keine \$1/\$2 (in awk \$(1) schreiben)" || nein "gefunden: $DOLLAR"
+
           echo "Nur erlaubte Dateitypen (Regel fürs Anthropic-Verzeichnis)"
           VERBOTEN=$(git ls-files | grep -v -E '\.(md|txt|json|ya?ml|png|jpe?g|gif|webp|ico)$' | grep -v -x -e LICENSE -e .gitignore || true)
           [ -z "$VERBOTEN" ] && ok "nur Text, JSON, YAML und Bilder" || nein "nicht erlaubte Dateien: $VERBOTEN"

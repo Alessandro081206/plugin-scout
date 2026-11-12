@@ -9,7 +9,7 @@ Argument: `$ARGUMENTS`
 
 ## 1. Vorbereiten
 - Lies das **Profil** (siehe Skill). Gibt es keins, mach ein allgemeines Weekly und schreib unten den Hinweis: "Tipp: Mach `/plugin-scout:start`, dann passt das Weekly zu dir."
-- Lies das **Gedächtnis** aus den bisherigen Weekly-Issues (siehe Skill): was schon gezeigt wurde, was 👍 und was 👎 bekommen hat.
+- Lies das **Gedächtnis** aus den bisherigen Weekly-Issues (siehe Skill): was schon gezeigt wurde, was 👍 und was 👎 bekommen hat. Lokal zusätzlich das Lern-Protokoll abgleichen (Skill 2b), in der Cloud stattdessen `## Gelernt` aus dem Profil.
 
 ## 2. Suchen
 - Zeitraum: Plugins, die in den **letzten 7 Tagen neu erschienen** sind oder ein **großes Update** bekommen haben. Datum ermitteln (`date +%Y-%m-%d`) und 7 Tage zurückrechnen (Linux: `date -d '7 days ago' +%Y-%m-%d`, Mac: `date -v-7d +%Y-%m-%d`).
@@ -43,7 +43,7 @@ Gezielt suchen: `/plugin-scout:search <was du brauchst>` · Vor dem Installieren
 Dann jedes Plugin als **eigene Karte** (aus dem Skill), jeweils mit einer Überschrift-Zeile davor: `🏆 Top-Tipp der Woche`, `🎯 Für dich` oder `🔭 Über den Tellerrand`.
 
 ## 5. Ausgabe
-- **Ohne** `issue` im Argument: Alles im Chat zeigen (Einleitung + alle Karten untereinander). Den 👍/👎-Satz weglassen.
+- **Ohne** `issue` im Argument: Alles im Chat zeigen (Einleitung + alle Karten untereinander). Den 👍/👎-Satz weglassen. Lokal die gezeigten Plugins im Lern-Protokoll eintragen (Skill 2b).
 - **Mit** `issue` im Argument: Als GitHub-Issue ins Daten-Repo `<WEEKLY_REPO>` posten (wie man es findet: siehe Skill). Gibt es keins, nicht posten, sondern im Chat zeigen und `/plugin-scout:setup-weekly` vorschlagen. **Nur über REST** (`gh issue create` und GraphQL gehen in der Cloud nicht):
   1. Einleitung in eine Datei schreiben (z. B. `weekly.md` im Scratchpad bzw. in `/tmp`).
   2. Issue anlegen:

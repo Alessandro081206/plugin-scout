@@ -51,6 +51,7 @@ Bestimme mit der Tabelle **"Projekt-Signale"** im Skill:
 - **Größe:** "groß" heißt mehr als ca. 500 Code-Dateien
 - **Höchstens 3–4 Bedarfe**, der wichtigste zuerst. Ein Bedarf zählt nur, wenn ein Plugin hier **spürbar** hilft.
 - Lies die installierten Plugins (siehe Skill). Was die schon abdecken, ist kein Bedarf.
+- Gleich das Lern-Protokoll ab (Skill 2b). Was der Nutzer angenommen hat, zeigt, was ihm liegt. Was er wieder entfernt hat oder mehrmals ignoriert hat, nicht nochmal vorschlagen. Gib dem Subagent eine kurze Zusammenfassung davon mit (nur Plugin-Namen und Themen).
 - Steht im Cache unter `abgelehnt:` ein Plugin, schlag es nicht wieder vor.
 
 Gibt es **keinen echten Bedarf**, überspring Schritt 5 und sag ehrlich:
@@ -70,6 +71,7 @@ Damit die vielen Suchergebnisse den Chat nicht vollmachen, lass die Suche von **
 4. Am Ende: "Willst du eins genauer checken (`/plugin-scout:check`) oder zwei vergleichen (`/plugin-scout:compare`)?"
 
 ## 7. Merken
+- **Lern-Protokoll:** Die gezeigten Plugins eintragen (Skill 2b), mit Befehl `project`. Danach `## Gelernt` im Profil aktualisieren (Skill 2b).
 - **Cache schreiben** (Ordner anlegen), lokal in `$F`. Bestehende Zeilen `plaene`, `hinweise` und `abgelehnt` beibehalten:
   ```
   typ: <zum Beispiel Next.js-Webseite / Uni-Notizen (Markdown + PDF)>

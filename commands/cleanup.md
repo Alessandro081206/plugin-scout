@@ -8,6 +8,7 @@ Schau dir die installierten Plugins des Nutzers an und hilf beim **Aufräumen**.
 - `~/.claude/plugins/installed_plugins.json` lesen: Name, Marketplace, Version, Installationsdatum (`installedAt`), letztes Update (`lastUpdated`)
 - Für jedes Plugin seine `plugin.json` und kurz die Bestandteile im `installPath` ansehen (Befehle, Skills, Hooks, MCP-Server), damit du weißt, was es macht
 - Aktivierung prüfen: `enabledPlugins` in `~/.claude/settings.json`
+- Das Lern-Protokoll abgleichen (Skill 2b), damit plugin-scout merkt, was du entfernt hast
 
 ## 2. Prüfen
 - **Veraltet:** Neuere Version im Marketplace? Vergleiche mit `~/.claude/plugins/marketplaces/<marketplace>/.claude-plugin/marketplace.json` (oder dem Repo auf GitHub). Repo seit über 6 Monaten nicht gepflegt oder archiviert?

@@ -45,7 +45,43 @@ Daraus ableiten:
 - **👎:** Davon weniger. Ähnliches nur noch, wenn es wirklich herausragend ist.
 - Keine Reaktion heißt nichts. Nicht als Ablehnung werten.
 
-Benutze das Gedächtnis bei Weekly und Suche, falls `gh` verfügbar ist.
+Benutze das Gedächtnis bei Weekly und Suche, falls `gh` verfügbar ist. Lies dazu auch `## Gelernt` im Profil (siehe 2b).
+
+## 2b. Lernen aus deinem Verhalten (nur lokal)
+
+plugin-scout merkt sich auf dem Rechner des Nutzers, was es vorgeschlagen hat, und schaut später nach, ob er es installiert, behalten oder wieder entfernt hat. **Nichts davon verlässt den Rechner**, außer der kurzen Zusammenfassung `## Gelernt` im Profil, und die auch nur ins eigene private Daten-Repo (siehe unten). In der Cloud gibt es diese Datei nicht, dann diesen Abschnitt überspringen.
+
+**Abgleichen:** Zu Beginn von search, project, start, cleanup und einem lokalen weekly:
+```
+V=~/.claude/plugin-scout/vorschlaege.txt; I=~/.claude/plugins/installed_plugins.json
+if [ -f "$V" ] && [ -f "$I" ]; then
+  jq -r '.plugins | keys[]' "$I" > "$V.inst" 2>/dev/null
+  awk -F'\t' -v OFS='\t' -v d="$(date +%Y-%m-%d)" 'NR==FNR{inst[$(1)]=1;next}
+    { s=$(6)
+      if (s=="vorgeschlagen" && ($(2) in inst)) s="installiert:" d
+      else if (s ~ /^installiert/ && !($(2) in inst)) s="entfernt:" d
+      else if (s ~ /^entfernt/ && ($(2) in inst)) s="installiert:" d
+      $(6)=s; print }' "$V.inst" "$V" > "$V.tmp" && mv "$V.tmp" "$V"; rm -f "$V.inst"
+  awk -F'\t' '{n[$(2)]++; st[$(2)]=$(6); th[$(2)]=$(5); d0[$(2)]=(d0[$(2)]?d0[$(2)]:$(1))} END{for(p in n) print p " | " th[p] " | " n[p] "x gezeigt, zuerst " d0[p] " | " st[p]}' "$V" | tail -60
+fi
+```
+
+**Was das bedeutet:**
+- **installiert** (und noch da): angenommen. Wie ein 👍. Mehr von diesem Thema und von ähnlichen Plugins vorschlagen.
+- **entfernt:** ausprobiert und wieder gelöscht. Wie ein leichtes 👎. Ähnliches nur, wenn es klar besser ist.
+- **vorgeschlagen**, mindestens 2x gezeigt und der erste Vorschlag ist älter als 14 Tage: offenbar nicht interessant. Nicht mehr von selbst zeigen, nur wenn der Nutzer gezielt danach fragt.
+- Sonst kein Signal. Nicht installiert heißt nicht automatisch "mag ich nicht".
+- **Lernen ändert nie die Ampel.** Beliebt heißt nicht sicher.
+- **Nur wenn es passt:** Gelerntes ist ein Pluspunkt bei der Auswahl, kein Grund, unpassende Plugins vorzuschlagen.
+
+**Merken:** Nach jeder Antwort mit Plugin-Karten (search, project, start, lokales weekly) pro gezeigtem Plugin eine Zeile anhängen (Ordner vorher anlegen). Thema = ein bis zwei allgemeine Wörter, zum Beispiel "testing" oder "design":
+```
+mkdir -p ~/.claude/plugin-scout
+printf '%s\t%s\t%s\t%s\t%s\tvorgeschlagen\n' "$(date +%Y-%m-%d)" "<plugin@marketplace>" "<owner/repo>" "<befehl>" "<thema>" >> ~/.claude/plugin-scout/vorschlaege.txt
+```
+Kennst du den genauen `plugin@marketplace`-Namen nicht sicher, lass das Plugin weg.
+
+**Fürs Weekly in der Cloud (Pflicht nach dem Merken):** Gibt es ein lokales Profil, halte dort den Abschnitt `## Gelernt` aktuell. Gibt es noch keinen, leg ihn am Ende an, sobald es mindestens ein Signal gibt (installiert, entfernt oder ignoriert) (höchstens 6 Zeilen, nur Themen und Plugin-Namen), zum Beispiel `- mag: testing (testing-plugin behalten)` oder `- eher nicht: notion (wieder entfernt)`. Hat sich der Abschnitt geändert und gibt es ein Daten-Repo, lade das Profil hoch wie in `commands/start.md` Schritt 3. Erwähne das nur in einem halben Satz.
 
 ## 3. Wo suchen
 

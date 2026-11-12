@@ -1,6 +1,7 @@
 ---
 max_turns: 40
 runs: 1
+timeout_seconds: 600
 allowed_tools: [Skill, Read, Bash, WebFetch, WebSearch, Agent]
 ---
 

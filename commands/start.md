@@ -39,7 +39,7 @@ Gehe Schritt für Schritt vor:
    - **Essentials:** 3–4 Plugins, die fast jeder gebrauchen kann. Vor allem aus dem offiziellen Anthropic-Marketplace (`anthropics/claude-plugins-official`), live nachschauen, nichts aus dem Gedächtnis.
    - **Für den Use Case:** Was empfehlen andere Leute mit genau diesem Use Case? Reddit/Hacker-News-Threads, Blogposts, Awesome-Listen auf GitHub, Marketplaces, Sterne. Was mehrfach empfohlen wird, kommt nach oben.
    - **Überraschung:** 1 richtig gutes Plugin aus einem ganz anderen Bereich, das trotzdem spannend sein könnte.
-   - Schon installierte Plugins aussortieren.
+   - Schon installierte Plugins aussortieren. Gleich vorher das Lern-Protokoll ab (Skill 2b), falls es eins gibt.
 
 5. **Ergebnis** als Plugin-Karten aus dem Skill (mit Ampel), in drei Gruppen:
    - **⭐ Must-have**: die 3–4 wichtigsten (Essentials + Top für den Use Case)
@@ -48,6 +48,7 @@ Gehe Schritt für Schritt vor:
    Davor ein Satz, wonach du ausgewählt hast.
 
 6. **Abschluss:**
+   - Die gezeigten Plugins im Lern-Protokoll eintragen und `## Gelernt` im Profil aktualisieren (Skill 2b), ohne es groß zu erwähnen.
    - "Sag mir einfach, welches ich dir genauer erklären oder checken soll."
    - Kurze Übersicht der Befehle: `/plugin-scout:search <Wunsch>`, `/plugin-scout:project` (was deinem aktuellen Projekt helfen würde), `/plugin-scout:check <Plugin>`, `/plugin-scout:compare <A> <B>`, `/plugin-scout:cleanup`, `/plugin-scout:weekly`
    - Gibt es noch kein Daten-Repo: in einem Satz anbieten: "Willst du jeden Montag automatisch ein Weekly mit neuen Plugins? Dann tipp `/plugin-scout:setup-weekly`."
