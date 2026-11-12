@@ -1,6 +1,6 @@
 ---
 name: plugin-scout
-description: 'Finds, rates, safety-checks and explains Claude Code plugins in plain language. Use when someone looks for a plugin ("is there a plugin for ...", "I need a plugin that ...", "gibt''s ein Plugin für ...", "which plugins are worth it for ..."), wants to know if a plugin is safe, wants to compare plugins, clean up installed plugins, or see what''s new. Also used by all /plugin-scout: commands.'
+description: 'Finds, rates, safety-checks and explains Claude Code plugins in plain language. Use when someone looks for a plugin ("is there a plugin for ...", "I need a plugin that ...", "gibt''s ein Plugin für ...", "which plugins are worth it for ..."), wants to know if a plugin is safe, wants to compare plugins, clean up installed plugins, see what''s new, or asks which plugins would help the project they are working on ("what would help my project", "welche Plugins würden meinem Projekt helfen"). Also used by all /plugin-scout: commands.'
 ---
 
 # plugin-scout
@@ -86,7 +86,42 @@ Daraus eine **Ampel** für die Karte:
 - 🟡 Bringt Hooks/MCP-Server mit, ist ganz neu oder hat etwas Auffälliges. Erst `/plugin-scout:check` machen
 - 🔴 Deutliche Warnzeichen (gefälschte Sterne, versteckte Downloads, verdächtiger Code). Normalerweise gar nicht empfehlen
 
+**Immer offen sagen, auch bei 🟢:** Verbindet sich ein Plugin mit einem fremden Server (MCP-Server, `.mcp.json`) oder startet es selbst Programme (Hooks), steht das **immer** im Ampel-Satz der Karte, zusammen mit dem Grund, warum es trotzdem sicher ist. Zum Beispiel: "🟢 Verbindet sich mit einem Server von Prisma (`mcp.prisma.io`). Das ist okay, weil es direkt von Prisma kommt."
+
 Lieber **wenige gute** als viele mittelmäßige.
+
+## 4b. 💎 Geheimtipps
+
+Gute Nischen-Plugins werden oft übersehen. Ein weniger bekanntes Plugin (zum Beispiel unter ca. 200 ⭐) darf rein, aber **ohne Quote**: nur, wenn es den konkreten Bedarf **besser oder spezieller** löst als die bekannten. Nie nur, um "etwas Unbekanntes" dabei zu haben.
+
+Dafür gelten **strengere Regeln**:
+- in den letzten ~2 Monaten aktiv
+- klare README mit einem echten Beispiel
+- echtes Plugin (siehe oben), Ampel 🟢
+- Bringt es Hooks oder MCP-Server mit, mach vorher den Tiefen-Check aus `commands/check.md`. Ist das Ergebnis nicht 🟢, fliegt es raus.
+
+So findest du sie: zusätzlich `gh search repos --topic claude-code-plugin --sort updated --limit 30 ...` und Freitext-Suchen zum konkreten Bedarf **ohne** Sortierung nach Sternen.
+Auf der Karte hinter den Namen "💎 Geheimtipp" schreiben, plus ein Satz, warum es gut ist, obwohl es kaum jemand kennt.
+
+## 4c. Projekt-Signale (für `/plugin-scout:project`)
+
+Aus dem Fingerabdruck eines Projekts auf Bedarfe schließen. Hier stehen **keine Plugin-Namen**, gesucht wird immer live.
+
+| Signal im Projekt | Bedarf | Suchbegriffe (englisch) |
+|---|---|---|
+| HTML/CSS, React, Vue, Svelte, Astro, Tailwind | Gestaltung, UI, Barrierefreiheit | frontend design, ui, accessibility |
+| groß (mehr als ca. 500 Code-Dateien) oder Monorepo | Überblick behalten, Tokens sparen | code graph, codebase index, context, token |
+| Code, aber kaum oder keine Testdateien | Testen | testing, tdd, e2e |
+| Dockerfile, CI-Workflows, vercel.json, netlify.toml | Ausrollen, Automatisieren | deploy, devops, ci |
+| SQL, Prisma, ORM, Migrations | Datenbank | database, sql |
+| Python mit pandas, Jupyter-Notebooks, CSV | Daten auswerten | data analysis, jupyter |
+| React Native, Swift, Kotlin, Flutter | Mobile Apps | ios, android, mobile |
+| viel Markdown, Word, LaTeX | Schreiben, Doku | writing, docs, latex |
+| PDFs, Uni-Notizen, Quellen | Lernen, Recherche | research, study, pdf |
+| Folien (pptx, key) oder Präsentationsnotizen | Präsentieren | presentation, slides |
+| keine CLAUDE.md in einem größeren Projekt | Claude besser einrichten | claude md, project setup |
+
+Das sind nur Beispiele. Erkennst du einen anderen klaren Bedarf, nimm ihn. Ein Bedarf zählt nur, wenn ein Plugin **spürbar** hilft.
 
 ## 5. Erklären: die Plugin-Karte
 
@@ -117,5 +152,8 @@ Install-Befehle richtig ableiten:
 
 - **Nur vorschlagen, nie selbst installieren oder deinstallieren.** Der Nutzer entscheidet.
 - Nichts erfinden: Jeder Name, Link und jede Zahl muss aus deiner Suche stammen. Was du nicht prüfen konntest, sagst du.
-- Wenn nichts Gutes dabei ist, sag das ehrlich.
+- Wenn nichts Gutes dabei ist, sag das ehrlich. "Dir fehlt gerade nichts" ist eine gute Antwort, Vorschläge aus Verlegenheit nerven.
+- **Projektdaten bleiben lokal:** In Suchanfragen nur allgemeine Begriffe, nie Datei- oder Projektnamen, Pfade, Code oder Inhalte. Geheime Dateien (`.env*`, Schlüssel, Zugangsdaten) nie lesen.
+- **Nicht aufdrängen:** Merkst du im Gespräch, dass ein Plugin klar helfen würde (zum Beispiel beim Bauen einer Webseite ohne Design-Plugin), erwähne `/plugin-scout:project` höchstens einmal kurz.
 - Am Ende anbieten: "Soll ich dir eins davon genauer erklären oder checken?"
+- Unter jede Antwort mit Plugin-Empfehlungen (Suche, Projekt-Scan, Start, Weekly) **eine** kleine Zeile in der Sprache des Nutzers, zum Beispiel: "_Die Ampel ist eine schnelle Einschätzung, keine Garantie. Was du installierst, entscheidest du._"

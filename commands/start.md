@@ -22,6 +22,8 @@ Gehe Schritt für Schritt vor:
      - <was er nebenbei erwähnt hat, z. B. Beruf, Hobbys>
      ## Lieber nicht
      - <falls er etwas ausschließt>
+     ## Projekte
+     - <nur falls bekannt: Art der Projekte, z. B. "Next.js-Webseite", ohne Namen oder Pfade>
      ```
    - Gibt es schon ein Daten-Repo (`<WEEKLY_REPO>`, wie man es findet: siehe Skill), lade das Profil dorthin hoch, damit das Weekly in der Cloud es kennt. Gibt es keins oder ist `gh` nicht eingeloggt: überspringen, **kein** Repo anlegen.
      ```
@@ -47,7 +49,7 @@ Gehe Schritt für Schritt vor:
 
 6. **Abschluss:**
    - "Sag mir einfach, welches ich dir genauer erklären oder checken soll."
-   - Kurze Übersicht der Befehle: `/plugin-scout:search <Wunsch>`, `/plugin-scout:check <Plugin>`, `/plugin-scout:compare <A> <B>`, `/plugin-scout:cleanup`, `/plugin-scout:weekly`
+   - Kurze Übersicht der Befehle: `/plugin-scout:search <Wunsch>`, `/plugin-scout:project` (was deinem aktuellen Projekt helfen würde), `/plugin-scout:check <Plugin>`, `/plugin-scout:compare <A> <B>`, `/plugin-scout:cleanup`, `/plugin-scout:weekly`
    - Gibt es noch kein Daten-Repo: in einem Satz anbieten: "Willst du jeden Montag automatisch ein Weekly mit neuen Plugins? Dann tipp `/plugin-scout:setup-weekly`."
 
 Zusätzliche Wünsche des Nutzers (falls angegeben): $ARGUMENTS

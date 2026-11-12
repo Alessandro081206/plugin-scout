@@ -19,7 +19,7 @@ Argument: `$ARGUMENTS`
 - Qualitätsfilter + Schnell-Check aus dem Skill. 🔴-Plugins fliegen raus. Schon gezeigte Plugins fliegen raus (außer großes Update).
 
 ## 3. Auswählen
-- **🎯 Für dich:** 3–5 Plugins, die zum Profil passen. Hier zählen auch 👍/👎 aus dem Gedächtnis.
+- **🎯 Für dich:** 3–5 Plugins, die zum Profil passen, auch zu den Projekt-Arten unter `## Projekte`. Hier zählen auch 👍/👎 aus dem Gedächtnis. Ein 💎 Geheimtipp (siehe Skill) ist willkommen, wenn er wirklich gut passt.
 - **🔭 Über den Tellerrand:** 1–2 coole Plugins aus **ganz anderen Bereichen**, die nicht zum Profil passen, aber spannend sind (z. B. Spiele-Grafik, Musik, etwas Verrücktes). Nur richtig gute oder originelle.
 - **🏆 Top-Tipp:** das beste Plugin aus "Für dich".
 - Lieber 4 richtig gute als 8 mittelmäßige. Gab es diese Woche nichts wirklich Gutes, sag das ehrlich und zeig höchstens 1–2.

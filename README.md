@@ -1,6 +1,6 @@
 # 🧩 plugin-scout
 
-🇩🇪 [Deutsche Version](README.de.md)
+🇬🇧 **English** · 🇩🇪 [Deutsch](README.de.md)
 
 A Claude Code plugin that finds good **other plugins** for you, checks them for safety, and explains them so anyone can understand them, no tech jargon.
 
@@ -14,6 +14,7 @@ A Claude Code plugin that finds good **other plugins** for you, checks them for 
 |---|---|
 | `/plugin-scout:start` | **Getting-started guide.** Tell it what you use Claude for and get the most important plugins: must-haves, nice-to-haves and one surprise. Your use case is saved. |
 | `/plugin-scout:search <wish>` | Searches for plugins, e.g. `/plugin-scout:search build presentations`. You get 3–5 suggestions. |
+| `/plugin-scout:project` | **Looks at the project you're working on** (website, app, thesis notes, …) and tells you which plugins would really help it, including lesser-known gems. If nothing is missing, it says so. |
 | `/plugin-scout:check <plugin>` | **Safety check** before installing: What does it do on your computer? Are the GitHub stars real? Ends with a traffic light 🟢🟡🔴. |
 | `/plugin-scout:compare <A> <B>` | Compares two plugins and tells you which one fits you better. |
 | `/plugin-scout:cleanup` | Shows which of your plugins are duplicates, outdated or unused. |
@@ -35,6 +36,7 @@ Your profile (use case) is stored in that private repo, not in this one.
 plugin-scout is made only of instructions for Claude (skills and commands). No scripts, no compiled code, no packages to install.
 
 - **Reading your setup:** to avoid recommending plugins you already have, Claude reads `~/.claude/plugins/installed_plugins.json` and `known_marketplaces.json` on your machine. `/plugin-scout:cleanup` also searches your local Claude Code chat logs for plugin names to estimate which plugins you actually use. Nothing from these files is uploaded.
+- **Project scan:** `/plugin-scout:project` looks at the current folder on your machine: it counts files by type and reads small config files like `package.json`. It never reads secret files (`.env`, keys) and never sends code, file names or project names anywhere; only general terms like "react" or "testing" go into searches. A short summary is cached locally in `~/.claude/plugin-scout/projekte/`.
 - **Searching:** Claude uses the GitHub CLI (`gh`), web search and web pages to look up plugins. Only search terms and public repository names are sent.
 - **Your profile** (use case, language, interests you mention) is saved locally in `~/.claude/plugin-scout/profil.md`. If you set up the weekly, it is also stored in **your own private** GitHub repo.
 - **Weekly (optional):** `/plugin-scout:setup-weekly` asks before it creates a private repo on your GitHub account and a scheduled Claude routine that posts the weekly there as an issue.
@@ -68,6 +70,10 @@ claude --plugin-dir ./plugin-scout
 ## Contributing
 
 Found a bug or have an idea? [Open an issue](../../issues/new/choose). New commands are just `.md` files in `commands/`. How plugins are searched, rated and explained lives in `skills/plugin-scout/SKILL.md`.
+
+## Disclaimer
+
+The 🟢🟡🔴 ratings are a **quick, automated assessment** based on public information (files, README, stars, activity). They are **not a security audit and not a guarantee**. Plugins are made by third parties; plugin-scout never installs anything, and you decide what you install and use at your own risk. See the [license](LICENSE): the software is provided "as is", without warranty of any kind.
 
 ## License
 
